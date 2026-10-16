@@ -127,6 +127,7 @@ The local Strands Decider 2B model must also be available to run the complete de
 ```bash
 git clone https://github.com/dasu07988/LaunchGuard-AI.git
 cd LaunchGuard-AI
+
 ```
 
 ### 2. Create and Activate the Python Environment
@@ -250,5 +251,26 @@ The demo should show:
 LaunchGuard AI is an evolving prototype.
 
 - The current decision workflow uses a locally hosted Strands Decider 2B model.
-- Amazon Bedrock integration is planned and is not claimed as a completed feature.
-- Cloud changes
+- Amazon Bedrock explanation generation is optional and remains disabled by default until explicitly configured and tested.
+- Cloud changes are not executed automatically; the application provides risk assessments and recommendations only.
+- Decision quality depends on the information provided and the behavior of the decision model.
+- A passing test suite does not guarantee that every real-world cloud scenario will be classified correctly.
+- Human review remains important for high-risk, uncertain, or unexpected situations.
+
+---
+
+## 🤝 Contributing
+
+Contributions, bug reports, and suggestions are welcome. Please open an issue to discuss a significant change before submitting a pull request.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## 🏷️ Hackathon
+
+Built for the Agent Experience Hackathon: Strands Decider.
+
+`#strands-decider-2b` `#guardrails`
