@@ -6,6 +6,7 @@ from uuid import uuid4
 import httpx
 
 from app.config import settings
+from app.services.bedrock import explain_decision
 
 from app.services.policy import evaluate_policy
 
