@@ -89,14 +89,27 @@ def explain_decision(
             if item.get("type") == "text"
         ).strip()
 
+     
         if not explanation:
+            logger.warning("Bedrock returned an empty explanation")
             return None
 
+        logger.info("Bedrock explanation generated successfully")
         return explanation[:1200]
 
+
     except (ClientError, BotoCoreError, ValueError, KeyError, TypeError) as exc:
-        logger.warning(
-            "Bedrock explanation unavailable: %s",
-            type(exc).__name__,
-        )
+        if isinstance(exc, ClientError):
+            error = exc.response.get("Error", {})
+            logger.warning(
+                "Bedrock explanation unavailable: %s - %s",
+                error.get("Code", type(exc).__name__),
+                error.get("Message", "No error message"),
+            )
+        else:
+            logger.warning(
+                "Bedrock explanation unavailable: %s - %s",
+                type(exc).__name__,
+                str(exc),
+            )
         return None
