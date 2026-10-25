@@ -499,7 +499,7 @@ Use human judgement and appropriate operational controls for real infrastructure
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contribution
 
 Contributions, bug reports, and suggestions are welcome.
 
